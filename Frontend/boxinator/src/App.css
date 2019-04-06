@@ -1,33 +1,59 @@
+@import url("https://use.typekit.net/avf3lya.css");
 .App {
   text-align: center;
+  background: floralwhite;
+  padding-bottom: 20px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.block {
+  background: white;
+  max-width: 800px;
+  margin: 40px auto 0px auto;
+  padding: 20px;
+  box-shadow: rgba(100, 100, 100, 0.555) 3px 3px 5px;
+  
+}
+.block h1 {
+  margin-top: 0;
+  font-family: kon-tiki-aloha-jf, sans-serif;
+  color: orangered;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.add-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-align: left;
+}
+
+.add-form label {
+  font-family: 'Gloria Hallelujah', cursive;
+  color: rgb(67, 213, 250);
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  font-size: 18px;
+  margin-bottom: 35px;
+}
+.add-form input, select {
+  height: 25px;
+  width: 168px;
+}
+
+.color-box{
+  padding: 10px;
+}
+
+.add-form .button-submit{
+  box-shadow: rgba(100, 100, 100, 0.555) 3px 3px 5px;
+  background: rgb(67, 213, 250);
+  height: 40px;
+  font-size: 20px;
+  font-family: 'Gloria Hallelujah', cursive;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 20px 5px 0 5px;
 }
