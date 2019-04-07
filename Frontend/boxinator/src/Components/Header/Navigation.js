@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './Boxinator.png'
 import './Header.css'
 
-
+//This component shows the header with the nav buttons
 export default function Navigation() {
     return(
         <div className='main-navigation'>

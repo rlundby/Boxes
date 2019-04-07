@@ -1,7 +1,6 @@
 package boxinator;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -14,7 +13,8 @@ public class MainController {
 
     @PostMapping(path="/add")
     public Boxorder addNewOrder (@RequestBody Boxorder boxorder){
-
+        double totalShipping = boxorder.getWeight() * boxorder.calculateShipping(boxorder.getCountry());
+        boxorder.setShippingCost((int) totalShipping);
         boxorderRepository.save(boxorder);
         return boxorder;
     }

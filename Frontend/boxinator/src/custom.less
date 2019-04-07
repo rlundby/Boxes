@@ -1,0 +1,77 @@
+//Fonts
+@mainFont: kon-tiki-aloha-jf, sans-serif;
+@secondaryFont: 'Gloria Hallelujah', cursive;
+
+//Colors
+@blue: rgb(67, 213, 250);
+@orange: orangered;
+
+//Mixins
+.apply-box-shadow() {
+    box-shadow: rgba(100, 100, 100, 0.555) 3px 3px 5px;
+}
+
+.block {
+  background: white;
+  max-width: 800px;
+  margin: 40px auto 0px auto;
+  padding: 20px;
+  .apply-box-shadow();
+  h1 {
+    margin-top: 0;
+    font-family: @mainFont;
+    color: @orange;
+  }
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    label {
+        font-family: @secondaryFont;
+        color: @blue;
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        font-size: 18px;
+        margin-bottom: 35px;
+    }
+    input, select {
+        height: 25px;
+        width: 168px;
+    }
+    .button-submit{
+        .apply-box-shadow();
+        background: @blue;
+        height: 40px;
+        font-size: 20px;
+        font-family: @secondaryFont;
+        color: white;
+        border: none;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin: 20px 5px 0 5px;
+    }
+}
+
+.color-box{
+    padding: 10px;
+  }
+
+.total {
+    font-size: 16px;
+    font-family: kon-tiki-aloha-jf, sans-serif;
+    margin-bottom: 0;
+    &:nth-child(2n){
+         margin-top: 0;
+    }
+}
+
+.list-table {
+    td {
+        width: 120px;
+    }
+  }

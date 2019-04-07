@@ -1,11 +1,9 @@
 export const GET_BOXES = 'GET_BOXES';
 
-
 const getBoxes = (boxes) => ({
     type: GET_BOXES,
     boxes
 })
-
 
 // Action creator that gets all the boxes
 export const getAllBoxes = () =>(dispatch) => {

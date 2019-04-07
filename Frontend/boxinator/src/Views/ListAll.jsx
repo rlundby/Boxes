@@ -27,7 +27,7 @@ class ListAll extends Component {
     return (
       <div className="block">
             <h1>List All Boxes</h1>
-            <table style={{margin: '0 auto'}}>
+            <table className="list-table" style={{margin: '0 auto'}}>
               <tbody>
                 <tr>
                   <th>Receiver</th>
@@ -41,9 +41,9 @@ class ListAll extends Component {
                     return(
                       <tr key={i}>
                         <td>{box.receiver}</td>
-                        <td>{box.weight}</td>
+                        <td>{box.weight}kg</td>
                         <td style={{background: `rgb${box.color}`}}></td>
-                        <td>{box.shippingCost}</td>
+                        <td>{box.shippingCost}:-</td>
                       </tr>
                     )
                   }) 
@@ -51,8 +51,8 @@ class ListAll extends Component {
               </tbody>
              
             </table>
-            <p>Total cost: {this.getTotal('shippingCost')}</p>
-            <p>Total Weight: {this.getTotal('weight')} </p>
+            <p className="total">Total cost: {this.getTotal('shippingCost')}:-</p>
+            <p className="total">Total Weight: {this.getTotal('weight')}kg </p>
       </div>
     );
   }

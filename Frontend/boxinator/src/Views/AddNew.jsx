@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import {ChromePicker} from 'react-color';
 
 //import helpers
-import { validateColor, validateFields, shippingCost } from '../Helpers/index'
+import { validateColor, validateFields } from '../Helpers/index'
 
 //import components
 import ConfirmModal from '../Components/Modals/ConfirmModal'
 
 class AddNew extends Component {
 
+  // This is the state. It has some default values such as white color,
+  // Sweden as shipping country, and modal as hidden.
   state = {
     errorText: '',
     color: { hex: "#ffffff", hsl: { a: 1, h: 0, l: 1 ,s: 0}, rgb: { a: 1, b: 255, g: 255, r: 255}},
@@ -26,13 +28,14 @@ class AddNew extends Component {
   } 
 
   setError(string) {
+    // I noticed I changed the errorText alot so I made a function for it.
     this.setState({
       errorText: string
     })
   }
 
   toggleModal(string){
-    console.log('hej')
+    // This function hides the modal
     this.setState({
       displayModal: !this.state.displayModal,
       modalType: string
@@ -50,9 +53,13 @@ class AddNew extends Component {
   }
 
   validateSubmit(){
+      //These are the values from state that should be validated. 
+      //Color has it's own validation
       const valuesToCheck = ['receiver', 'weight', 'country'];
       let errorMsg = '';
 
+      //Map through the values and get the correct validation from
+      //the imported validateFields object.
       valuesToCheck.map((key) => {
         let valid = validateFields[key].validate(this.state[key])
         if(!valid){
@@ -73,6 +80,7 @@ class AddNew extends Component {
   }
 
   handleChange = event => {
+    //Keep track on the input fields and update local state accordingly
     const target = event.target;
     const value = target.value;
     const name = target.name;
@@ -84,12 +92,18 @@ class AddNew extends Component {
   }
 
   handleColorChangeComplete = (color, event) => {
+    //Did the color picker change? Update state!
+    //the hexColor is used to display to the user what color
+    //they currently have selected
     this.setState({
       color: color,
       hexColor: color.hex
     })
   }
   addNewBox(box) {
+    //Post a the new box and handle the response.
+    //If it's a 200, show a success-modal
+    //otherwise, show a failed one.
     fetch('http://localhost:8080/orders/add', {
         method: 'POST',
         headers: {
@@ -100,12 +114,11 @@ class AddNew extends Component {
     })
         .then(result => {
           console.log(result.status)
-            if(result.status == 200){
+            if(result.status === 200){
               this.toggleModal('success')
             }
             return result.json()
         })
-        .then(res => console.log(res))
         .catch(err => {
           if(err) {
             this.toggleModal('failed')
@@ -141,7 +154,6 @@ class AddNew extends Component {
         weight: this.state.weight,
         color: colorString,
         country: this.state.country,
-        shippingCost: this.state.weight * shippingCost[this.state.country]
       }
       this.addNewBox(box)
     } else {

@@ -1,10 +1,3 @@
-export const shippingCost = {
-    Sweden: 1.3,
-    China: 4,
-    Brazil: 8.6,
-    Australia: 7.2
-}
-
 export function validateColor(color){
     // We use HSL to check if the color is blue
     let hue = color.hsl.h;

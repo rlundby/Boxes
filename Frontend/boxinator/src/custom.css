@@ -1,0 +1,59 @@
+.block {
+  background: white;
+  max-width: 800px;
+  margin: 40px auto 0px auto;
+  padding: 20px;
+  box-shadow: rgba(100, 100, 100, 0.555) 3px 3px 5px;
+}
+.block h1 {
+  margin-top: 0;
+  font-family: kon-tiki-aloha-jf, sans-serif;
+  color: orangered;
+}
+.add-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+.add-form label {
+  font-family: 'Gloria Hallelujah', cursive;
+  color: #43d5fa;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  font-size: 18px;
+  margin-bottom: 35px;
+}
+.add-form input,
+.add-form select {
+  height: 25px;
+  width: 168px;
+}
+.add-form .button-submit {
+  box-shadow: rgba(100, 100, 100, 0.555) 3px 3px 5px;
+  background: #43d5fa;
+  height: 40px;
+  font-size: 20px;
+  font-family: 'Gloria Hallelujah', cursive;
+  color: white;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 20px 5px 0 5px;
+}
+.color-box {
+  padding: 10px;
+}
+.total {
+  font-size: 16px;
+  font-family: kon-tiki-aloha-jf, sans-serif;
+  margin-bottom: 0;
+}
+.total:nth-child(2n) {
+  margin-top: 0;
+}
+.list-table td {
+  width: 120px;
+}
