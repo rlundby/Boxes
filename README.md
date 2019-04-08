@@ -6,6 +6,7 @@ The frontend is built with Create React App, uses Redux, is styled with Less and
 To run, use following commands:
 
 - yarn install
+- yarn test
 - yarn start
 
 
