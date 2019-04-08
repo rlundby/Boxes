@@ -104,7 +104,7 @@ class AddNew extends Component {
     //Post a the new box and handle the response.
     //If it's a 200, show a success-modal
     //otherwise, show a failed one.
-    fetch('http://localhost:8080/orders/add', {
+    fetch('http://localhost:8000/orders/add', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

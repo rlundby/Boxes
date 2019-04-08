@@ -7,7 +7,7 @@ const getBoxes = (boxes) => ({
 
 // Action creator that gets all the boxes
 export const getAllBoxes = () =>(dispatch) => {
-    fetch('http://localhost:8080/orders/all')
+    fetch('http://localhost:8000/orders/all')
         .then(res => res.json())
         .then(data => dispatch(getBoxes(data)))
         .catch(err => console.log(err))
@@ -18,7 +18,7 @@ export const addNewBox = (box) =>(dispatch) => {
     console.log('Box to be added: ')
     console.log(box)
 
-    fetch('http://localhost:8080/orders/add', {
+    fetch('http://localhost:8000/orders/add', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
