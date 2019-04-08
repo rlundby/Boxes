@@ -23,11 +23,14 @@ Also note that "spring.jpa.hibernate.ddl-auto" will be set to "create" to initia
 
 ### Api Endpoints
 - GET: http://localhost:8080/orders/all
++
 Returns all a list of all orders
-
++
 - POST: http://localhost:8080/orders/add
++
 Adds a single order
 Requires a box item
++
 ```
 const box = {
         receiver: "Name of the receriver",
@@ -36,7 +39,7 @@ const box = {
         country: "Sweden",
       }
 ```
-Receiver: String, Not empty
-Weight: Int, Not Emtpy, Weight in kg
-Color: String, Not Emtpy, Not Blue, In RGB format
-Country: String, Not Empty
+- Receiver: String, Not empty
+- Weight: Int, Not Emtpy, Weight in kg
+- Color: String, Not Emtpy, Not Blue, In RGB format
+- Country: String, Not Empty
