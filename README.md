@@ -14,6 +14,12 @@ To run, use following commands:
 
 The backend is built using Java with the Spring Framework. The database is using MySQL
 
+To run, use following commands:
+- mvn install
+- mvn test
+- mvn spring-boot:run
+
+Or:  
 To use the REST Api from the frontend, run **"Application"** located in the **"boxinator" package**.  
 To launch the tests, run **"ApplicationTests"** located in the test folder.
 
