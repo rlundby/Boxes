@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div className="App">
       <Navigation/>
-        <div className="main-content">
+        <div className="main-content" style={{minHeight: '500px'}}>
           <BrowserRouter>
             <Switch>
               <Route exact path='/' component={Main}/>

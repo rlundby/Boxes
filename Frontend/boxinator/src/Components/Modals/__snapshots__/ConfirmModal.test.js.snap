@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfirmModal If failed, modal should have className failed 1`] = `""`;
+
+exports[`ConfirmModal should fire function on button press 1`] = `""`;
+
+exports[`ConfirmModal should match snapshot 1`] = `""`;
