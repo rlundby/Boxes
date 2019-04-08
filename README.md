@@ -14,6 +14,7 @@ To run, use following commands:
 The backend is built using Java with the Spring Framework. The database is using MySQL
 
 To use the REST Api from the frontend, run **"Application"** located in the **"boxinator" package**.
+To launch the tests, run **"ApplicationTests"** located in the test folder.
 
 *Please note,  
 the database runs on an MySQL instance on port 3306 with the **"admin"** user. You might have to change
