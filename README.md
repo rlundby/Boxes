@@ -6,6 +6,7 @@ The frontend is built with Create React App, uses Redux, is styled with Less and
 To run, use following commands:
 
 - yarn install
+- yarn test
 - yarn start
 
 
@@ -13,7 +14,14 @@ To run, use following commands:
 
 The backend is built using Java with the Spring Framework. The database is using MySQL
 
-To use the REST Api from the frontend, run **"Application"** located in the **"boxinator" package**.
+To run, use following commands:
+- mvn install
+- mvn test
+- mvn spring-boot:run
+
+Or:  
+To use the REST Api from the frontend, run **"Application"** located in the **"boxinator" package**.  
+To launch the tests, run **"ApplicationTests"** located in the test folder.
 
 *Please note,  
 the database runs on an MySQL instance on port 3306 with the **"admin"** user. You might have to change
