@@ -1,7 +1,7 @@
 package boxinator.Controllers;
 
-import boxinator.Repositories.BoxorderRepository;
-import boxinator.Models.Boxorder;
+import boxinator.Repositories.BoxOrderRepository;
+import boxinator.Models.BoxOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.*;
 public class MainController {
     @Autowired
 
-    private BoxorderRepository boxorderRepository;
+    private BoxOrderRepository boxorderRepository;
 
     @PostMapping(path="/add")
-    public Boxorder addNewOrder (@RequestBody Boxorder boxorder){
+    public BoxOrder addNewOrder (@RequestBody BoxOrder boxorder){
         double totalShipping = boxorder.getWeight() * boxorder.calculateShipping(boxorder.getCountry());
         boxorder.setShippingCost((int) totalShipping);
         boxorderRepository.save(boxorder);
@@ -22,7 +22,7 @@ public class MainController {
     }
 
     @GetMapping(path="/all")
-    public @ResponseBody Iterable<Boxorder> getAllOrders(){
+    public @ResponseBody Iterable<BoxOrder> getAllOrders(){
         return boxorderRepository.findAll();
     }
 

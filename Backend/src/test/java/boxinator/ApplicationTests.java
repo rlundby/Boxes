@@ -1,6 +1,6 @@
 package boxinator;
 
-import boxinator.Models.Boxorder;
+import boxinator.Models.BoxOrder;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -57,7 +57,7 @@ public class ApplicationTests {
 
     @Test
     public void testAddNewBoxorder(){
-        Boxorder boxorder = new Boxorder();
+        BoxOrder boxorder = new BoxOrder();
         boxorder.setReceiver("Name");
         boxorder.setColor("(255,255,255)");
         boxorder.setWeight(100);
@@ -66,7 +66,7 @@ public class ApplicationTests {
         double totalShipping = boxorder.getWeight() * boxorder.calculateShipping(boxorder.getCountry());
         boxorder.setShippingCost((int) totalShipping);
 
-        ResponseEntity<Boxorder> postResponse = restTemplate.postForEntity(getRootUrl() + "/orders/add", boxorder, Boxorder.class);
+        ResponseEntity<BoxOrder> postResponse = restTemplate.postForEntity(getRootUrl() + "/orders/add", boxorder, BoxOrder.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
         assertEquals(200, postResponse.getStatusCodeValue());
@@ -74,9 +74,9 @@ public class ApplicationTests {
 
     @Test
     public void testAddNewBoxorderNoBodyShouldGive500(){
-        Boxorder boxorder = new Boxorder();
+        BoxOrder boxorder = new BoxOrder();
 
-        ResponseEntity<Boxorder> postResponse = restTemplate.postForEntity(getRootUrl() + "/orders/add", boxorder, Boxorder.class);
+        ResponseEntity<BoxOrder> postResponse = restTemplate.postForEntity(getRootUrl() + "/orders/add", boxorder, BoxOrder.class);
         assertEquals(500, postResponse.getStatusCodeValue());
     }
 
@@ -88,12 +88,12 @@ public class ApplicationTests {
 
     @Test
     public void testInvalidFieldsShouldFailValidation(){
-        Boxorder boxorder = new Boxorder();
+        BoxOrder boxorder = new BoxOrder();
         boxorder.setReceiver("");
         boxorder.setColor("");
         boxorder.setWeight(-1);
         boxorder.setCountry("");
-        Set<ConstraintViolation<Boxorder>> violations = validator.validate(boxorder);
+        Set<ConstraintViolation<BoxOrder>> violations = validator.validate(boxorder);
 
         assertFalse(violations.isEmpty());
 
