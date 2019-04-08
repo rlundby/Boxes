@@ -1,4 +1,4 @@
-package boxinator;
+package boxinator.Models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

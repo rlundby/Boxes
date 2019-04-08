@@ -1,5 +1,7 @@
-package boxinator;
+package boxinator.Controllers;
 
+import boxinator.Repositories.BoxorderRepository;
+import boxinator.Models.Boxorder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
