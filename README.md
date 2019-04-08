@@ -20,3 +20,23 @@ the database runs on an MySQL instance on port 3306 with the "admin" user. You m
 the user to suite on available on your instance.
 
 Also note that "spring.jpa.hibernate.ddl-auto" will be set to "create" to initiate the database. To have data persist between sessions please change this to "update" once the structure is in place.
+
+### Api Endpoints
+- GET: http://localhost:8080/orders/all
+Returns all a list of all orders
+
+- POST: http://localhost:8080/orders/add
+Adds a single order
+Requires a box item
+```
+const box = {
+        receiver: "Name of the receriver",
+        weight: 200,
+        color: "(255,255,255)",
+        country: "Sweden",
+      }
+```
+Receiver: String, Not empty
+Weight: Int, Not Emtpy, Weight in kg
+Color: String, Not Emtpy, Not Blue, In RGB format
+Country: String, Not Empty
