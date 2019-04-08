@@ -15,7 +15,7 @@ The backend is built using Java with the Spring Framework. The database is using
 
 To use the REST Api from the frontend, run "Application" located in the "boxinator" package.
 
-Please note,
+Please note,  
 the database runs on an MySQL instance on port 3306 with the "admin" user. You might have to change
 the user to suite on available on your instance.
 
@@ -28,7 +28,7 @@ Returns all a list of all orders
 
 - POST: http://localhost:8080/orders/add
 
-Adds a single order
+Adds a single order  
 Requires a box item
 
 ```
